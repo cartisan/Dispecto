@@ -7,6 +7,7 @@ public class PlanStandard implements GastPartyKontext {
 		disko.tanzen(gast);
 		disko.tanzen(gast);
 		disko.trinken(gast);
+		gast.verlasseDisko();
 	}
 
 }

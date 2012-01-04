@@ -30,7 +30,9 @@ public class Disko {
 	}
 
 	public void betreten(Gast gast) {
-		// Setzt Party-kontext des Gastes
+		System.out.println("Heute ist " + party.getPartyName()); 				//CONC: Logging,PartyArt
+		gast.setPlan(party.getGastKontext());									//CONC: PartyArt
+		gast.setDisko(this);
 	}
 	
 	public void trinken(Gast gast) {

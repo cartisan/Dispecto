@@ -51,11 +51,19 @@ public class Gast {
 		System.out.println(this.name + " bekommt Reputation: " + String.valueOf(reputation)); 		//CON: Logging
 		this.reputation += reputation;
 	}
+	
+	public GastPartyKontext getPlan() {
+		return plan;
+	}
 
-	public Gast(String name, Disko disko) {
+	public void setPlan(GastPartyKontext plan) {
+		this.plan = plan;
+	}
+
+	public Gast(String name) {
 		super();
 		this.name = name;
-		this.disko = disko;
+		this.disko = null;
 		this.ausgaben = 0;
 		this.reputation = 0;
 		this.pegel = 0;
@@ -63,9 +71,23 @@ public class Gast {
 	}
 	
 	public void besucheDisko(Disko disko) {
-		System.out.println(this.name + " besucht Disko: " + disko.getName()); 		//CON: Logging
+		System.out.println(this.name + " besucht das " + disko.getName()); 		//CON: Logging
 		disko.betreten(this);
 		
 		plan.feiere(this, disko);						//CONC: PartyArt
+	}
+	
+	public void verlasseDisko() {
+		System.out.println(this.name + " verlässt das " + disko.getName()); 		//CON: Logging
+		this.disko = null;
+		//TODO: gesundheit
+		this.wieGehts();								//CONC: Gesundheit
+	}
+
+	private void wieGehts() {
+		System.out.println("----------");
+		System.out.println("Pegel: " + String.valueOf(this.pegel) + " Ausgaben: " + String.valueOf(this.ausgaben));
+		System.out.println("----------");
+		
 	}
 }

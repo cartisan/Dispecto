@@ -7,6 +7,7 @@ public class PlanÜ30 implements GastPartyKontext {
 		disko.trinken(gast);
 		disko.trinken(gast);
 		disko.trinken(gast);
+		gast.verlasseDisko();
 	}
 
 }

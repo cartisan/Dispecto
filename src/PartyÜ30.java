@@ -13,5 +13,9 @@ public class Party‹30 implements PartyKontext {
 	public String getPartyName() {
 		return "‹30-Party";
 	}
+	
+	public GastPartyKontext getGastKontext() {
+		return new Plan‹30();
+	}
 
 }

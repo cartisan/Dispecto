@@ -7,6 +7,7 @@ public class Plan90er implements GastPartyKontext {
 		disko.tanzen(gast);
 		disko.trinken(gast);
 		disko.tanzen(gast);
+		gast.verlasseDisko();
 	}
 
 }

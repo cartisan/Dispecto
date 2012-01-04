@@ -13,5 +13,9 @@ public class Party90er implements PartyKontext {
 	public String getPartyName() {
 		return "90' Party";
 	}
+	
+	public GastPartyKontext getGastKontext() {
+		return new Plan90er();
+	}
 
 }

@@ -42,7 +42,10 @@ public class Disko {
 
 	public void betreten(Gast gast) {
 		System.out.println("Heute ist " + party.getPartyName()); 				//CONC: Logging,PartyArt
+		
 		gast.wieGehts();														//CONC: Gesundheit
+		if(gast.getPegel()>20) this.capo.meldung();
+		
 		gast.setPlan(party.getGastKontext());									//CONC: PartyArt
 		gast.setDisko(this);
 	}

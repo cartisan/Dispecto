@@ -4,6 +4,7 @@ public class Disko {
 	public int ansehen;
 	private int haerte;
 	private PartyKontext party;		// PAT: State
+	private Capo capo = null;
 	
 	public String getName() {
 		return name;
@@ -19,6 +20,10 @@ public class Disko {
 
 	public void setAnsehen(int ansehen) {
 		this.ansehen = ansehen;
+	}
+	
+	public void setCapo(Capo capo) {
+		this.capo = capo;
 	}
 
 	public Disko(String name, int ansehen, int haerte, PartyKontext party) {

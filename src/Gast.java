@@ -77,19 +77,19 @@ public class Gast {
 	}
 	
 	public void besucheDisko(Disko disko) {
-		System.out.println(this.name + " schaut sich das " + disko.getName() +  " an,"); 		//CON: TeamReputation, Logging
-		if(this.reputation > disko.getAnsehen()) {												//CON: TeamReputation
-			System.out.println("findet es jedoch anstößig und geht.");							//CON: TeamReputation, Logging
+		System.out.println(this.name + " schaut sich das " + disko.getName() +  " an,"); 		//CONC: TeamReputation, Logging
+		if(this.reputation > disko.getAnsehen()) {												//CONC: TeamReputation
+			System.out.println("findet es jedoch anstößig und geht.");							//CONC: TeamReputation, Logging
 		}
-		else {															//CON: TeamReputation
-			System.out.println("und betritt zufrieden das Lokal.");		//CON: Logging 		
+		else {															//COCN: TeamReputation
+			System.out.println("und betritt zufrieden das Lokal.");		//CONC: Logging 		
 			disko.betreten(this);
 			plan.feiere(this, disko);									//CONC: PartyArt	
 		}
 	}
 	
 	public void verlasseDisko() {
-		System.out.println(this.name + " verlässt das " + disko.getName()); 		//CON: Logging
+		System.out.println(this.name + " verlässt das " + disko.getName()); 		//CONC: Logging
 		this.disko = null;
 		this.wieGehts();								//CONC: Gesundheit
 	}

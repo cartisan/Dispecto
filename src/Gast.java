@@ -5,6 +5,7 @@ public class Gast {
 	private int ausgaben;
 	private int pegel;
 	private int reputation;
+	private GastPartyKontext plan;			//PAT: Strategy
 	
 	public String getName() {
 		return name;
@@ -58,12 +59,13 @@ public class Gast {
 		this.ausgaben = 0;
 		this.reputation = 0;
 		this.pegel = 0;
+		this.plan = new PlanStandard();
 	}
 	
 	public void besucheDisko(Disko disko) {
 		System.out.println(this.name + " besucht Disko: " + disko.getName()); 		//CON: Logging
 		disko.betreten(this);
 		
-		// Starte Ablauf des Diskobesuchs
+		plan.feiere(this, disko);						//CONC: PartyArt
 	}
 }

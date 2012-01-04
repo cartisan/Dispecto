@@ -3,7 +3,7 @@ public class Disko {
 	public String name;
 	public int ansehen;
 	private int haerte;
-	private PartyKontext party;		// PAT: State-Pattern
+	private PartyKontext party;		// PAT: State
 	
 	public String getName() {
 		return name;

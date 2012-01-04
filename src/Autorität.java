@@ -1,6 +1,11 @@
 
-public class Starter {
+public class Autorit‰t {
+	//CONC: Autorisierung
+	public static boolean meldung() {
+		return true;
+	}
 	public static void main(String[] args) {
+		System.runFinalizersOnExit(true);
 		Disko disko1 = new Disko("Thimbles",10,5,new Party90er());
 		Disko disko2 = new Disko("Fork",10,5,new Party‹30());
 		

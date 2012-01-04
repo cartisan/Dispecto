@@ -62,12 +62,18 @@ public class Gast {
 
 	public Gast(String name) {
 		super();
-		this.name = name;
-		this.disko = null;
-		this.ausgaben = 0;
-		this.reputation = 0;
-		this.pegel = 0;
-		this.plan = new PlanStandard();
+		if (Autorität.meldung()) {			//CONC: Autorisierung
+			this.name = name;
+			this.disko = null;
+			this.ausgaben = 0;
+			this.reputation = 0;
+			this.pegel = 0;
+			this.plan = new PlanStandard();
+		}
+	}
+	
+	public void finalize() {
+		Autorität.meldung();
 	}
 	
 	public void besucheDisko(Disko disko) {
@@ -80,11 +86,11 @@ public class Gast {
 	public void verlasseDisko() {
 		System.out.println(this.name + " verlässt das " + disko.getName()); 		//CON: Logging
 		this.disko = null;
-		//TODO: gesundheit
 		this.wieGehts();								//CONC: Gesundheit
 	}
 
-	private void wieGehts() {
+	//CONC: Gesundheit
+	public void wieGehts() {
 		System.out.println("----------");
 		System.out.println("Pegel: " + String.valueOf(this.pegel) + " Ausgaben: " + String.valueOf(this.ausgaben));
 		System.out.println("----------");

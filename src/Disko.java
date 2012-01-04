@@ -23,14 +23,21 @@ public class Disko {
 
 	public Disko(String name, int ansehen, int haerte, PartyKontext party) {
 		super();
-		this.name = name;
-		this.ansehen = ansehen;
-		this.haerte = haerte;
-		this.party = party;
+		if (Autorität.meldung()) {			//CONC: Autorisierung
+			this.name = name;
+			this.ansehen = ansehen;
+			this.haerte = haerte;
+			this.party = party;
+		}
+	}
+	
+	public void finalize() {
+		Autorität.meldung();
 	}
 
 	public void betreten(Gast gast) {
 		System.out.println("Heute ist " + party.getPartyName()); 				//CONC: Logging,PartyArt
+		gast.wieGehts();														//CONC: Gesundheit
 		gast.setPlan(party.getGastKontext());									//CONC: PartyArt
 		gast.setDisko(this);
 	}

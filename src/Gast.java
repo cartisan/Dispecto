@@ -60,13 +60,13 @@ public class Gast {
 		this.plan = plan;
 	}
 
-	public Gast(String name) {
+	public Gast(String name, int reputation) {
 		super();
 		if (Autoritaet.meldung()) {			//CONC: Autorisierung
 			this.name = name;
 			this.disko = null;
 			this.ausgaben = 0;
-			this.reputation = 0;
+			this.reputation = reputation;
 			this.pegel = 0;
 			this.plan = new PlanStandard();
 		}
@@ -77,10 +77,15 @@ public class Gast {
 	}
 	
 	public void besucheDisko(Disko disko) {
-		System.out.println(this.name + " besucht das " + disko.getName()); 		//CON: Logging
-		disko.betreten(this);
-		
-		plan.feiere(this, disko);						//CONC: PartyArt
+		System.out.println(this.name + " schaut sich das " + disko.getName() +  " an,"); 		//CON: TeamReputation, Logging
+		if(this.reputation > disko.getAnsehen()) {												//CON: TeamReputation
+			System.out.println("findet es jedoch anstößig und geht.");							//CON: TeamReputation, Logging
+		}
+		else {															//CON: TeamReputation
+			System.out.println("und betritt zufrieden das Lokal.");		//CON: Logging 		
+			disko.betreten(this);
+			plan.feiere(this, disko);									//CONC: PartyArt	
+		}
 	}
 	
 	public void verlasseDisko() {

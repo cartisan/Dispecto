@@ -6,12 +6,14 @@ public class Autoritaet {
 	}
 	public static void main(String[] args) {
 		System.runFinalizersOnExit(true);
-		Disko disko1 = new Disko("Thimbles",10,5,new Party90er());
-		Disko disko2 = new Disko("Fork",10,5,new PartyUe30());
+		Disko disko1 = new Disko("Thimbles",10,3,new Party90er());
+		Disko disko2 = new Disko("Boojum",5,1,null);
+		Disko disko3 = new Disko("Fork",15,7,new PartyUe30());
 		
-		Gast gast1 = new Gast("Bellmann");
+		Gast gast1 = new Gast("Bellmann",9);
 		gast1.besucheDisko(disko1);
 		gast1.besucheDisko(disko2);
+		gast1.besucheDisko(disko3);
 
 	}
 

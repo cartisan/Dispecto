@@ -4,6 +4,22 @@ public class Disko {
 	public int ansehen;
 	private int haerte;
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAnsehen() {
+		return ansehen;
+	}
+
+	public void setAnsehen(int ansehen) {
+		this.ansehen = ansehen;
+	}
+
 	public Disko(String name, int ansehen, int haerte) {
 		super();
 		this.name = name;
@@ -16,11 +32,16 @@ public class Disko {
 	}
 	
 	public void trinken(Gast gast) {
-		// erhöht Ausgaben und Pegel des Gastes
+		System.out.println(gast.getName() + " trinkt etwas."); 				//CONC: Logging
+		
+		gast.addPegel(haerte);
+		gast.addAusgaben(ansehen);
 	}
 	
 	public void tanzen(Gast gast) {
-		// senkt Pegel des Gastes
+		System.out.println(gast.getName() + " tanzt eine Weile."); 				//CONC: Logging
+		
+		gast.subPegel(haerte);
 	}
 	
 }

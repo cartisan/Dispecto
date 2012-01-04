@@ -6,15 +6,6 @@ public class Gast {
 	private int pegel;
 	private int reputation;
 	
-	public Gast(String name, Disko disko) {
-		super();
-		this.name = name;
-		this.disko = disko;
-		this.ausgaben = 0;
-		this.reputation = 0;
-		this.pegel = 0;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -23,39 +14,56 @@ public class Gast {
 		this.name = name;
 	}
 
-	public Disko getBesuchtDisko() {
+	public Disko getDisko() {
 		return disko;
 	}
 
-	public void setBesuchtDisko(Disko besuchtDisko) {
-		this.disko = besuchtDisko;
+	public void setDisko(Disko disko) {
+		this.disko = disko;
 	}
 
 	public int getAusgaben() {
 		return ausgaben;
 	}
 
-	public void setAusgaben(int ausgaben) {
-		this.ausgaben = ausgaben;
+	public void addAusgaben(int ausgaben) {
+		this.ausgaben += ausgaben;
 	}
 
 	public int getPegel() {
 		return pegel;
 	}
 
-	public void setPegel(int pegel) {
-		this.pegel = pegel;
+	public void addPegel(int pegel) {
+		this.pegel += pegel;
+	}
+	
+	public void subPegel(int pegel) {
+		this.pegel -= pegel;
 	}
 
 	public int getReputation() {
 		return reputation;
 	}
 
-	public void setReputation(int reputation) {
-		this.reputation = reputation;
+	public void addReputation(int reputation) {
+		System.out.println(this.name + " bekommt Reputation: " + String.valueOf(reputation)); 		//CON: Logging
+		this.reputation += reputation;
 	}
 
-	public void besucheDisko() {
-		// Starte Strategy zum Disko-Besuch
+	public Gast(String name, Disko disko) {
+		super();
+		this.name = name;
+		this.disko = disko;
+		this.ausgaben = 0;
+		this.reputation = 0;
+		this.pegel = 0;
+	}
+	
+	public void besucheDisko(Disko disko) {
+		System.out.println(this.name + " besucht Disko: " + disko.getName()); 		//CON: Logging
+		disko.betreten(this);
+		
+		// Starte Ablauf des Diskobesuchs
 	}
 }

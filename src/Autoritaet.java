@@ -1,5 +1,5 @@
 
-public class Autorit‰t {
+public class Autoritaet {
 	//CONC: Autorisierung
 	public static boolean meldung() {
 		return true;
@@ -7,7 +7,7 @@ public class Autorit‰t {
 	public static void main(String[] args) {
 		System.runFinalizersOnExit(true);
 		Disko disko1 = new Disko("Thimbles",10,5,new Party90er());
-		Disko disko2 = new Disko("Fork",10,5,new Party‹30());
+		Disko disko2 = new Disko("Fork",10,5,new PartyUe30());
 		
 		Gast gast1 = new Gast("Bellmann");
 		gast1.besucheDisko(disko1);

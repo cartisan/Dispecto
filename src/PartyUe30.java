@@ -1,5 +1,5 @@
 
-public class Party‹30 implements PartyKontext {
+public class PartyUe30 implements PartyKontext {
 
 	public void tanzen(Gast gast, int haerte) {
 		gast.subPegel(haerte);
@@ -15,7 +15,7 @@ public class Party‹30 implements PartyKontext {
 	}
 	
 	public GastPartyKontext getGastKontext() {
-		return new Plan‹30();
+		return new PlanUe30();
 	}
 
 }

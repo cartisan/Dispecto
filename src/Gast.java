@@ -62,7 +62,7 @@ public class Gast {
 
 	public Gast(String name) {
 		super();
-		if (Autorität.meldung()) {			//CONC: Autorisierung
+		if (Autoritaet.meldung()) {			//CONC: Autorisierung
 			this.name = name;
 			this.disko = null;
 			this.ausgaben = 0;
@@ -73,7 +73,7 @@ public class Gast {
 	}
 	
 	public void finalize() {
-		Autorität.meldung();
+		Autoritaet.meldung();
 	}
 	
 	public void besucheDisko(Disko disko) {

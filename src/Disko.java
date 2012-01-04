@@ -23,7 +23,7 @@ public class Disko {
 
 	public Disko(String name, int ansehen, int haerte, PartyKontext party) {
 		super();
-		if (Autorität.meldung()) {			//CONC: Autorisierung
+		if (Autoritaet.meldung()) {			//CONC: Autorisierung
 			this.name = name;
 			this.ansehen = ansehen;
 			this.haerte = haerte;
@@ -32,7 +32,7 @@ public class Disko {
 	}
 	
 	public void finalize() {
-		Autorität.meldung();
+		Autoritaet.meldung();
 	}
 
 	public void betreten(Gast gast) {

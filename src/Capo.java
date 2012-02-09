@@ -1,13 +1,17 @@
-
+//CONC: Autorisierung
 public class Capo {
-	private int betrunkene=0;
+	private int drunks=0;
+	private Authority boss=null;
 	
-	public void meldung() {
-		betrunkene += 1;
-		if(betrunkene>20) {
-			Autoritaet.meldung();
-			betrunkene=0;
+	public Capo(Authority boss) {
+		this.boss=boss;
+	}
+	
+	public void report() {
+		drunks += 1;
+		if(drunks>20) {
+			boss.report();
+			drunks=0;
 		}
 	}
-
 }

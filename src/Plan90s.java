@@ -1,13 +1,11 @@
 //CONC: PartyArt
-public class PlanStandard implements GuestPartyContext {
-
+public class Plan90s implements GuestPartyContext {
 	public void party(Guest guest, Disco disco) {
-		disco.dance(guest);
-		disco.dance(guest);
-		disco.dance(guest);
+		disco.drink(guest);
+		disco.drink(guest);
 		disco.dance(guest);
 		disco.drink(guest);
+		disco.dance(guest);
 		guest.leaveDisco();
 	}
-
 }
